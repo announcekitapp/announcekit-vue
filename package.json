@@ -1,38 +1,27 @@
 {
   "name": "announcekit-vue",
-  "version": "2.3.0",
-  "description": "Use AnnounceKit widgets in your VueJS App",
-  "repository": "https://github.com/announcekitapp/announcekit-vue",
-  "homepage": "https://announcekit.app",
-  "keywords": [
-    "announcekit",
-    "newsfeed",
-    "changelog",
-    "vue"
-  ],
-  "author": "announcekit",
-  "license": "MIT",
-  "main": "dist/announcekit.umd.js",
-  "module": "dist/announcekit.esm.js",
-  "unpkg": "dist/announcekit.min.js",
-  "browser": {
-    "./sfc": "src/announcekit.vue"
-  },
+  "version": "3.0.0",
   "scripts": {
-    "build": "npm run build:umd & npm run build:es & npm run build:unpkg",
-    "build:umd": "rollup --config ./rollup.config.js --format umd --file dist/announcekit.umd.js",
-    "build:es": "rollup --config ./rollup.config.js --format es --file dist/announcekit.esm.js",
-    "build:unpkg": "rollup --config ./rollup.config.js --format iife --file dist/announcekit.min.js"
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
   },
-  "devDependencies": {
-    "rollup": "^1.32.1",
-    "rollup-plugin-buble": "^0.19.8",
-    "rollup-plugin-commonjs": "^10.0.1",
-    "rollup-plugin-vue": "^5.1.9",
-    "vue": "^2.6.11",
-    "vue-template-compiler": "^2.6.11"
+  "files": [
+    "dist"
+  ],
+  "main": "./dist/announcekit.umd.js",
+  "module": "./dist/announcekit.es.js",
+  "exports": {
+    ".": {
+      "import": "./dist/announcekit.es.js",
+      "require": "./dist/announcekit.umd.js"
+    }
   },
   "dependencies": {
-    "vue-runtime-helpers": "^1.1.2"
+    "vue": "^3.2.25"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-vue": "^2.0.0",
+    "vite": "^2.7.2"
   }
 }
