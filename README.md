@@ -36,14 +36,23 @@ yarn add announcekit-vue
 </template>
 
 <script>
-import AnnounceKit from "announcekit-vue";
 export default {
-  name: "App",
-  components: {
-    AnnounceKit
-  }
+  name: "App"
 };
 </script>
+```
+
+```js
+import {createApp} from 'vue';
+import App from './App.vue';
+import AnnounceKit from 'announcekit-vue';
+const app = createApp(App);
+
+app.use(PrimeVue);
+app.use(AnnounceKit);
+
+...
+app.mount('#app');
 ```
 
 ## Props
